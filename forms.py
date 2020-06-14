@@ -238,6 +238,12 @@ class ArtistForm(Form):
     seeking_description = StringField(
         'seeking_description',default='TBA'
     )
+    image_link = StringField(
+        'image_link',default="http://127.0.0.1:5000/static/img/front-splash.jpg"
+    )
+    seeking_venue = BooleanField(
+        'seeking_venue',default=False
+    )
 
 
 # TODO IMPLEMENT NEW ARTIST FORM AND NEW SHOW FORM
