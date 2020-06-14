@@ -1,7 +1,9 @@
 from datetime import datetime
 from flask_wtf import Form
-from wtforms import StringField, SelectField, SelectMultipleField, DateTimeField, BooleanField
+from wtforms import StringField, SelectField, SelectMultipleField,\
+                    DateTimeField, BooleanField
 from wtforms.validators import DataRequired, AnyOf, URL
+
 
 class ShowForm(Form):
     artist_id = StringField(
@@ -13,8 +15,9 @@ class ShowForm(Form):
     start_time = DateTimeField(
         'start_time',
         validators=[DataRequired()],
-        default= datetime.today()
+        default=datetime.today()
     )
+
 
 class VenueForm(Form):
     name = StringField(
@@ -80,13 +83,14 @@ class VenueForm(Form):
         ]
     )
     address = StringField(
-        'address', validators=[DataRequired()],default='SAUDI ARABIA'
+        'address', validators=[DataRequired()], default='SAUDI ARABIA'
     )
     phone = StringField(
-        'phone',default="0583858024"
+        'phone', default="0583858024"
     )
     image_link = StringField(
-        'image_link',default="http://127.0.0.1:5000/static/img/front-splash.jpg"
+        'image_link',
+        default="http://127.0.0.1:5000/static/img/front-splash.jpg"
     )
     genres = SelectMultipleField(
         # TODO implement enum restriction
@@ -114,16 +118,17 @@ class VenueForm(Form):
         ]
     )
     facebook_link = StringField(
-        'facebook_link', validators=[URL()],default='www.facebook.com/sulimanaltaleb'
+        'facebook_link', validators=[URL()],
+        default='www.facebook.com/sulimanaltaleb'
     )
     website = StringField(
-        'website', validators=[URL()],default='www.github.com/sulimanaltaleb'
+        'website', validators=[URL()], default='www.github.com/sulimanaltaleb'
     )
     seeking_talent = BooleanField(
-        'seeking_talent',default=False
+        'seeking_talent', default=False
     )
     seeking_description = StringField(
-        'seeking_description',default='TBA'
+        'seeking_description', default='TBA'
     )
 
 
@@ -191,14 +196,15 @@ class ArtistForm(Form):
         ]
     )
     address = StringField(
-    'address', validators=[DataRequired()],default='SAUDI ARABIA'
+        'address', validators=[DataRequired()], default='SAUDI ARABIA'
     )
     phone = StringField(
         # TODO implement validation logic for state
-        'phone',default="0583858024"
+        'phone', default="0583858024"
     )
     image_link = StringField(
-        'image_link',default="http://127.0.0.1:5000/static/img/front-splash.jpg"
+        'image_link',
+        default="http://127.0.0.1:5000/static/img/front-splash.jpg"
     )
     genres = SelectMultipleField(
         # TODO implement enum restriction
@@ -227,22 +233,24 @@ class ArtistForm(Form):
     )
     facebook_link = StringField(
         # TODO implement enum restriction
-        'facebook_link', validators=[URL()],default='www.facebook.com/sulimanaltaleb'
+        'facebook_link', validators=[URL()],
+        default='www.facebook.com/sulimanaltaleb'
     )
     website = StringField(
-        'website', validators=[URL()],default='www.github.com/sulimanaltaleb'
+        'website', validators=[URL()], default='www.github.com/sulimanaltaleb'
     )
     seeking_talent = BooleanField(
-        'seeking_talent',default=False
+        'seeking_talent', default=False
     )
     seeking_description = StringField(
-        'seeking_description',default='TBA'
+        'seeking_description', default='TBA'
     )
-    image_link = StringField(
-        'image_link',default="http://127.0.0.1:5000/static/img/front-splash.jpg"
-    )
+    image_link = StringField('''
+        'image_link',
+        default="http://127.0.0.1:5000/static/img/front-splash.jpg"
+    ''')
     seeking_venue = BooleanField(
-        'seeking_venue',default=False
+        'seeking_venue', default=False
     )
 
 
